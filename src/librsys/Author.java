@@ -23,4 +23,8 @@ public class Author {
     {
         books.add(book);
     }
+
+    public ArrayList<Book> getBooks() {
+        return books;
+    }
 }

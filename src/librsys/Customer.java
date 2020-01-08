@@ -1,15 +1,20 @@
 package librsys;
 
+import java.util.ArrayList;
+
 public class Customer {
 
     private int id;
     private String name;
     private static int numOfCustomers = 1;
+    private static ArrayList<Loan> loans;
 
     public Customer(Library library, String name) {
         this.id = numOfCustomers++;
         this.name = name;
+        loans = new ArrayList<Loan>();
         library.addCustomer(this);
+
     }
 
     public int getId() {
@@ -30,6 +35,15 @@ public class Customer {
 
     public static int getNumOfCustomers() {
         return numOfCustomers;
+    }
+
+    public void addLoan(Loan loan)
+    {
+        loans.add(loan);
+    }
+
+    public static ArrayList<Loan> getLoans() {
+        return loans;
     }
 
     @Override
